@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <h1>This is the home page</h1>
+
+        {% if current_user.is_authenticated %}
+        <h2>Welcome {{ username }}</h2>
+        {% endif %}
+
+        <form method="post" action="/login">
+            <input type="submit" value="Press this to go to login page" name="login_page_redirect"/>
+        </form>
+
+        <form method="post" action="/registration">
+            <input type="submit" value="Press this to go to registration page" name="registration_page_redirect"/>
+        </form>
+
+        <form method="post" action="/profile">
+            <input type="submit" value="Press this to go to profile page" name="profile_page_redirect"/>
+        </form>
+
+        <form method="post" action="/quiz">
+            <input type="submit" value="Press this to go to quiz page" name="quiz_page_redirect"/>
+        </form>
+
+        <form method="post" action="/admin">
+            <input type="submit" value="Press this to go to admin page" name="admin_page_redirect"/>
+        </form>
+
+        <form method="post" action="/video_add_edit">
+            <input type="submit" value="Press this to go to video add edit page" name="vide_add_edit_page_redirect"/>
+        </form>
+
+        <form method="post" action="/quiz_analytics">
+            <input type="submit" value="Press this to go to quiz analytics page" name="quiz_analytics_page_redirect"/>
+        </form>
+
+        <form method="post" action="/video_analytics">
+            <input type="submit" value="Press this to go to video analytics page" name="video_analytics_page_redirect"/>
+        </form>
+
+        {% if current_user.is_authenticated %}
+        <form method="post" action="/">
+            <input type="submit" value="Press this button to logout" name="logout_user"/>
+        </form>
+        {% endif %}
+
+
+        
+        
+        </body>
+</html>

@@ -1,0 +1,35 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+<html>
+    <body>
+        <h1>This is the registration page</h1>
+        
+
+
+        <form method="post" action="/">
+            
+            <input type="submit" value="Go back to the home page" name="home_page_redirect"/>
+        </form>
+
+        <div style="color:red" name="registration_message">{{ registration_error }}</div>
+        <div name="registration_message">{{ registration_output }}</div>
+
+        <div class="column is-4 is-offset-4">
+            {% block content %}
+            
+            <div>
+                <form class="form-signin" method="POST" action="/registration">
+                    <h2>Please Register!</h2>
+                    {{ form.hidden_tag() }}
+                    {{ wtf.form_field(form.email) }}
+                    {{ wtf.form_field(form.username) }}
+                    {{ wtf.form_field(form.password) }}
+                   
+                    <button type="submit">Register!</button>
+                    
+                </form>
+            </div>
+            {% endblock %}
+
+        </body>
+</html>
